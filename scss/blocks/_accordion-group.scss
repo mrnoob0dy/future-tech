@@ -1,0 +1,12 @@
+.accordion-group {
+    display: grid;
+    row-gap: 30px;
+
+    @include laptop {
+        row-gap: 24px;
+    }
+
+    @include mobile {
+        row-gap: 20px;
+    }
+}

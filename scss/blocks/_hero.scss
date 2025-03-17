@@ -1,0 +1,166 @@
+.hero__main {  
+    @include tablet-above {
+        display: grid;
+        grid-template-columns: 60% auto;
+        grid-template-areas: 
+            'body resources-preview'
+            'metrics resources-preview';
+    }
+}
+
+.hero__body {
+    grid-area: body;
+    padding: 150px 50px 100px 0;
+
+    @include laptop {
+        padding: 100px 40px 100px 0;
+    }
+
+    @include tablet {
+        padding: 40px 0 30px;
+    }
+}
+
+.hero__subtitle {
+    margin-bottom: 30px;
+    font-family: var(--font-family-accent);
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 120%;
+    color: var(--color-dark-40);
+
+    @include laptop {
+        margin-bottom: 20px;
+        font-size: 22px;
+    }
+
+    @include mobile {
+        margin-bottom: 14px;
+        font-size: 18px;
+    }
+}
+
+.hero__title {
+    margin-bottom: 20px;
+    font-family: var(--font-family-accent);
+    font-weight: 500;
+    font-size: 70px;
+    line-height: 120%;
+    color: var(--color-light);
+
+    @include laptop {
+        margin-bottom: 14px;
+        font-size: 55px;
+    }
+
+    @include mobile {
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+}
+
+.hero__desc {
+    p {
+        font-size: 18px;
+        line-height: 150%;
+        color: var(--color-grey-50);
+
+        @include laptop {
+            font-size: 16px;
+        }
+
+        @include mobile {
+            font-size: 14px;
+        }
+    }
+}
+
+.hero__metrics {
+    grid-area: metrics;
+
+    @include tablet-above {
+        border-top: 1px solid var(--color-dark-15);
+    }
+
+    @include tablet {
+        &::before {
+            width: 100vw;
+            right: calc(var(--container-padding-x) * -1);
+        }
+    }
+}
+
+.hero__resources-preview {
+    grid-area: resources-preview;
+    padding-left: 80px;
+    padding-bottom: 80px;
+    background: url('./../img/resources-preview/bg.png') 0 0/cover no-repeat;
+
+    @include laptop {
+        padding-left: 50px;
+        padding-bottom: 50px;
+    }
+
+    @include tablet-above {
+        border-left: 1px solid var(--color-dark-15);
+    }
+
+    @include tablet {
+        width: 100vw;
+        margin-left: calc(var(--container-padding-x) * -1);
+        padding: 100px 40px 40px;
+        background-image: url('./../img/resources-preview/bg__tablet.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+.hero__advantages {
+    border-top: 1px solid var(--color-dark-15);
+    border-bottom: 1px solid var(--color-dark-15);
+    &-list {      
+        @include tablet-above {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &-item {
+        padding: 50px 0;
+
+        @include laptop {
+            padding: 40px 0;
+        }
+
+        @include tablet {
+            padding: 30px 0;
+        }
+
+        &:not(:last-child) {
+            padding-right: 80px;
+            border-right: 1px solid var(--color-dark-15);
+
+            @include laptop {
+                padding-right: 50px;
+            }
+
+            @include tablet {
+                padding-right: 0;
+                border-right: none;
+                border-bottom: 1px solid var(--color-dark-15);
+            }
+        }
+
+        &:not(:first-child) {
+            padding-left: 80px;
+
+            @include laptop {
+                padding-left: 50px;
+            }
+
+            @include tablet {
+                padding-left: 0;
+            }
+        }        
+    }
+}

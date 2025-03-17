@@ -1,0 +1,23 @@
+.badge {
+    display: inline-flex;
+    padding: 4px 12px;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--color-light);
+    background: 
+        linear-gradient(var(--color-dark-10), var(--color-dark-10)) padding-box, 
+        linear-gradient(45deg, var(--color-dark-15) 64%, var(--color-accent) 136%) border-box;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 4px 12px;
+    background-color: var(--color-dark-10);
+
+    @include mobile {
+        padding: 2px 12px;
+    }
+
+    @include laptop {
+        font-size: 14px;
+        border-radius: 4px;
+    }
+}

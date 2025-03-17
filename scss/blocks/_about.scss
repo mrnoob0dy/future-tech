@@ -1,0 +1,125 @@
+.about {
+    padding: 120px 0;
+    background-color: var(--color-dark-10);
+
+    @include laptop {
+        padding: 80px 0;
+    }
+
+    @include mobile{
+        padding: 40px 0;
+    }
+
+    &__header {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-areas: 
+            'icon info'
+            'icon description';
+        align-items: center;
+        column-gap: 80px;
+        row-gap: 30px;
+
+        @include laptop {
+            row-gap: 20px;
+            column-gap: 60px;
+        }
+
+        @include mobile {
+            row-gap: 20px;
+            grid-template-areas: 
+                'icon subtitle'
+                'title title'
+                'description description';
+        }
+    }
+
+    &__icon {
+        grid-area: icon;
+        width: 150px;
+
+        @include laptop {
+            width: 120px;
+        }
+
+        @include mobile {
+            width: 60px;
+        }
+    }
+
+    &__info {
+        display: grid;
+        grid-area: info;
+        row-gap: 16px;
+
+        @include laptop {
+            row-gap: 10px;
+        }
+
+        @include mobile {
+            display: contents;
+        }
+    }
+
+    &__subtitle {
+        justify-self: start;
+        @include mobile {
+            grid-area: subtitle;
+        }
+    }
+
+    &__title {
+        @include mobile {
+            grid-area: title;
+        }
+    }
+
+    &__description {
+        grid-area: description;
+        font-size: 18px;
+        line-height: 150%;
+        color: var(--color-gray-50);
+
+        @include laptop {
+            font-size: 16px;
+        }
+
+        @include mobile {
+            font-size: 14px;
+            grid: description;
+        }
+    }
+
+    &__inner {
+        display: grid;
+        row-gap: 100px;
+
+        @include laptop {
+            row-gap: 50px;
+        }
+    
+        @include mobile {
+            row-gap: 40px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+        border: var(--border);
+        border-radius: 12px;
+        background-color: var(--color-dark);
+
+        @include laptop {
+            padding: 10px;
+            gap: 10px;
+            border-radius: 10px;
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+    }
+}

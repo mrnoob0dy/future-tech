@@ -1,0 +1,58 @@
+html {
+    overflow-x: hidden;
+    &.is-lock {
+        overflow: hidden;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    font-family: var(--font-family-base);
+    letter-spacing: -0.03em;
+    color: var(--color-gray-50);
+    background-color: var(--color-dark);
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.title-2 {
+    font-family: var(--font-family-accent);
+    font-weight: 500;
+    font-size: 58px;
+    line-height: 130%;
+    letter-spacing: -0.03em;
+    color: var(--color-light);
+
+    @include laptop {
+        font-size: 44px;
+    }
+
+    @include mobile {
+        font-size: 28px;
+    }
+}
+
+:focus-visible {
+    outline: 2px dashed var(--color-light);
+    outline-offset: 4px;
+    transition-duration: 0 !important;
+}
+
+
+a,
+button {
+    &[aria-label] {
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 44px;
+            height: 44px;
+            @include abs-center;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.rating-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 16px;
+    border: var(--border);
+    border-radius: 100px;
+    background-color: var(--color-dark);
+
+    @include laptop {
+        gap: 4px;
+        padding: 8px 12px;
+    }
+
+    &__star {
+        width: 24px;
+        height: 24px;
+        background-image: url('./../img/icons/star_grey.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        &.is-active {
+            background-image: url('./../img/icons/star_yellow.svg');
+        }
+
+        @include laptop {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+.logo {
+    max-width: 179px;
+    @include mobile {
+        max-width: 126px;
+    }
+}

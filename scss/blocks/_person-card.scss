@@ -1,0 +1,59 @@
+.person-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @include laptop {
+        gap: 10px;
+    }
+
+    @include mobile {
+        gap: 8px;
+    }
+
+    &__image {
+        width: 80px;
+        height: 80px;
+        border-radius: 42px;
+        background-color: var(--color-dark-15);
+
+        @include laptop {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    &__body {
+        display: grid;
+        row-gap: 2px;
+
+        @include laptop {
+            row-gap: 0;
+        }
+    }
+
+    &__name {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 150%;
+        color: var(--color-light);
+
+        @include laptop {
+            font-size: 18px;
+        }
+    }
+
+    &__department {
+        font-size: 18px;
+        line-height: 150%;
+        color: var(--color-gray-60);
+
+        @include laptop {
+            font-size: 16px;
+        }
+
+        @include mobile {
+            font-size: 14px;
+        }
+    }
+ }

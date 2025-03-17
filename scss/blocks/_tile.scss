@@ -1,0 +1,27 @@
+.tile {
+    padding: 30px;
+    background-color: var(--color-dark-10);
+    border-radius: 12px;
+    border: 1px solid var(--color-dark-15);
+
+    @include laptop {
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    @include mobile {
+        padding: 24px;
+    }
+
+    &--small {
+        padding: 30px;
+
+        @include laptop {
+            padding: 24px;
+        }
+
+        @include mobile {
+            padding: 20px;
+        }
+    }
+}

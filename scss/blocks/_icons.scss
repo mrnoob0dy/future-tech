@@ -1,0 +1,43 @@
+.icon {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 10px;
+    transition: color 0.2s ease-in;
+    
+    &::after {
+        content: "";
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include laptop {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &--yellow-arrow {
+        &::after {
+            background-image: url('./../img/icons/yellow-arrow.svg');
+        }
+    }
+
+    &--yellow-eye {
+        &::after {
+            background-image: url('./../img/resources/yellow-eye.svg');
+        }
+    }
+
+    &--gray-arrow-down {
+        &::after {
+            background-image: url('./../img/icons/arrow-down__gray.svg');
+        }
+    }
+
+    &:hover {
+        color: var(--color-accent);
+    }
+}

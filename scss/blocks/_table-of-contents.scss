@@ -1,0 +1,35 @@
+.table-of-contents {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--color-dark-10);
+
+    @include laptop {
+        border-radius: 10px;
+    }
+
+    &__list {
+        display: grid;
+        row-gap: 20px;
+
+        @include laptop {
+            row-gap: 16px;
+        }
+    }
+
+    &__item {
+        margin-left: 20px;
+        font-size: 18px;
+        line-height: 150%;
+        color: var(--color-light);
+        list-style-type: disc;
+
+        @include laptop {
+            font-size: 16px;
+            margin-left: 18px;
+        }
+
+        @include mobile {
+            font-size: 14px;
+        }
+    }
+}

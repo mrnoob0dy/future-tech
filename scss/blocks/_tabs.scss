@@ -1,0 +1,96 @@
+.tabs {
+    &__header {
+        border-bottom: var(--border);
+
+        @include tablet {
+            overflow-x: auto;
+        }
+    }
+    &__buttons {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 20px;
+        padding-block: 50px;
+
+        @include laptop {
+            padding-block: 40px;
+            gap: 14px;
+        }
+
+        @include tablet {
+            width: max-content;
+        }
+
+        @include mobile {
+            padding-block: 20px;
+        }
+
+        &--compact {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            border: var(--border);
+            background-color: var(--color-dark);
+
+            .tabs__button {
+                padding: 18px 38px;
+
+                &.is-active {
+                    background-color: var(--color-dark-15);
+                }
+
+                @include laptop {
+                    padding: 14px 24px;
+                }
+
+                @include mobile {
+                    padding: 14px;
+                }
+            }
+        }
+    }
+
+    &__button {
+        padding: 30px 11px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        color: var(--color-gray-60);
+        background-color: transparent;
+        border: var(--border);
+        border-radius: 8px;
+        transition: color 0.2s ease-in, border-color 0.2s ease-in;
+
+        @include laptop {
+            padding: 24px 11px;
+            font-size: 14px;
+        }
+
+        @include mobile {
+            padding: 18px 11px;
+        }
+
+        &:hover {
+            color: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+
+        &.is-active {
+            font-weight: 500;
+            color: var(--color-light);
+            background-color: var(--color-dark-10);
+            pointer-events: none;
+        }
+    }
+
+    &__content {
+        &:not(.is-active) {
+            display: none;
+        }
+
+        &:focus-visible {
+            outline-offset: -16px;
+        }
+    }
+}

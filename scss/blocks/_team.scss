@@ -1,0 +1,39 @@
+.team {
+    display: flex;
+    padding: 10px;
+    border: var(--border);
+    border-radius: 100px;
+    background-color: var(--color-dark-10);
+
+    @include laptop {
+        padding: 8px;
+    }
+
+    &__person {
+        width: 60px;
+        background-color: var(--color-dark-15);
+        border: 2px solid var(--color-dark-40);
+        border-radius: 42px;
+
+        &--50 {
+            width: 50px;
+
+            @include laptop {
+                width: 40px;
+            }
+        }
+
+        @include laptop {
+            width: 50px;
+            border-width: 1px;
+        }
+
+        @include mobile{
+            width: 40px;
+        }
+
+        &:not(:first-child) {
+            margin-left: calc(60px / 4 * -1);
+        }
+    }
+}

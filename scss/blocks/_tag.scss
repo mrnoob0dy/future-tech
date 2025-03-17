@@ -1,0 +1,18 @@
+.tag {
+    padding: 6px 10px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--color-light);
+    border-radius: 4px;
+    background-color: var(--color-dark-20);
+
+    @include laptop {
+        padding: 4px 8px;
+        font-size: 16px;
+    }
+
+    @include mobile {
+        font-size: 14px;
+    }
+}

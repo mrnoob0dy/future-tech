@@ -1,0 +1,217 @@
+.blog-details {
+    &__banner {
+        display: flex;
+        align-items: end;
+        min-height: 598px;
+        padding-block: 65px;
+        text-align: center;
+        background: linear-gradient(
+                180deg,
+                rgba(20, 20, 20, 0) 0%,
+                rgba(20, 20, 20, 0.88) 75.52%,
+                #141414 100%
+            ),
+            url("./../img/blog-details/blog__details-bg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @include laptop {
+            min-height: 439px;
+            padding-block: 35px;
+        }
+
+        @include mobile {
+            min-height: 281px;
+            padding-block: 17px;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 64px;
+        line-height: 150%;
+        text-align: center;
+        color: var(--color-light);
+
+        @include laptop {
+            font-size: 44px;
+        }
+
+        @include mobile {
+            font-size: 28px;
+        }
+    }
+
+    &__body {
+        border-top: var(--border);
+        border-bottom: var(--border);
+
+        h2, h3, h4, h5, h6 {
+            &:not(:first-child) {
+                margin-top: 1.5em;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 1em;
+            }
+        }
+    }
+
+    &__actions {
+        padding: 50px 0 50px 80px;
+
+        @include laptop {
+            padding: 40px 0 40px 60px;
+        }
+
+        @include tablet-above {
+            border-bottom: var(--border);
+        }
+
+        @include tablet {
+            padding-inline: 0;
+            @include full-vw-centered-line(bottom);
+        }
+    
+        @include mobile {
+            padding: 20px 0;
+        }
+    }
+
+    &__summary {
+        padding: 80px 0 80px 80px;
+
+        @include laptop {
+            padding: 60px 0 60px 60px;
+        }
+
+        @include tablet {
+            padding-inline: 0;
+            @include full-vw-centered-line(bottom);
+        }
+
+        @include mobile {
+            padding: 40px 0;
+        }
+    }
+}
+
+.blog-details__body-inner {
+    display: grid;
+    grid-template-columns: 1fr 520px;
+
+    @include tablet {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+.blog-details__content {
+    @include tablet-above {
+        border-right: var(--border);
+    }
+}
+
+.blog-details__intro {
+    padding: 80px 80px 80px 0;
+    border-bottom: var(--border);
+
+    h2 {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        color: var(--color-light);
+
+        @include laptop {
+            font-size: 18px;
+        }
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 150%;
+        color: var(--color-gray-60);
+
+        @include laptop {
+            font-size: 16px;
+        }
+
+        @include mobile {
+            font-size: 14px;
+        }
+    }
+
+    @include laptop {
+        padding: 60px 60px 60px 0;
+    }
+
+    @include tablet {
+        padding-inline: 0;
+        @include full-vw-centered-line(bottom);
+    }
+
+    @include mobile {
+        padding: 40px 0;
+    }
+}
+
+.blog-details__main {
+    --initialMaxHeight: #{rem(741)};
+    padding: 80px 80px 80px 0;
+
+    @include laptop {
+        --initialMaxHeight: #{rem(692)};
+    }
+
+    @include tablet {
+        padding-inline: 0;
+    }
+
+    @include mobile {
+        --initialMaxHeight: #{rem(669)};
+    }
+
+    h2 {
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 150%;
+        color: var(--color-light);
+
+        @include laptop {
+            font-size: 22px;
+        }
+
+        @include mobile {
+            font-size: 18px;
+        }
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 150%;
+        color: var(--color-gray-60);
+
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+
+        @include laptop {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        @include mobile {
+            font-size: 14px;
+            margin: 0;
+        }
+    }
+
+    @include laptop {
+        padding: 60px 60px 60px 0;
+    }
+
+    @include mobile {
+        padding: 40px 0;
+    }
+}

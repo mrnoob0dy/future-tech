@@ -1,0 +1,56 @@
+.soc1als {
+    max-width: 308px;
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+
+        @include laptop {
+            gap: 10px;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 84px;
+        height: 60px;
+        // padding: 18px 30px;
+        border: 1px solid var(--color-dark-15);
+        border-radius: 6px;
+        background-color: var(--color-dark-10);
+        transition: border-color 0.2s ease-in;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--color-light);
+            transition: all 0.2s ease-in;
+
+            @include laptop {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &:hover {
+            border-color: var(--color-accent);
+            svg {
+                fill: var(--color-accent);
+            }
+        }
+
+        @include laptop {
+            // padding: 14px 32px;
+            width: 85px;
+            height: 48px;
+        }
+
+        @include mobile {
+            // padding: 14px 38px;
+            width: 96px;
+            height: 48px;
+        }
+    }
+}
